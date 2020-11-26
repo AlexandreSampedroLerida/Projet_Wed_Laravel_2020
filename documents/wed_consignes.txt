@@ -1,0 +1,16 @@
+PROJET WED - LARAVEL
+
+	1. PUBLIC
+	   Blog
+	   Contact
+	   Post détail
+
+	2. AJAX:
+	   More Posts
+	   Comments (post)
+
+	3. Backoffice (Voyager)
+	   Gérer posts, catégories, tags, abonnés, commentaires, ...
+	   Attention: 2 profils admin
+	   		Admin: gère tout
+	   		Authors: posts, tags, catégories
