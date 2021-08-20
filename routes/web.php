@@ -13,14 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Route de base
 Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
+// Lancer action d'un CTRL Post
 use App\Http\Controllers\PostController;
 Route::resource('posts', PostController::class);
 
-
+// Route admin
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
