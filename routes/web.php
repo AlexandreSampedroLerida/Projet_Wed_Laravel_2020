@@ -15,12 +15,17 @@ use Illuminate\Support\Facades\Route;
 
 // Route de base
 Route::get('/', function () {
-    return view('welcome');
+    return view('template.index');
 })->name('home');
 
-// Lancer action d'un CTRL Post
-use App\Http\Controllers\PostController;
-Route::resource('posts', PostController::class);
+// Routes des posts
+    use App\Http\Controllers\PostsController;
+
+    // Liste des posts
+    Route::get('/posts', [PostsController::class, 'index'])->name('posts.index');
+
+    // Détail d'un post
+    Route::get('/posts/{post}/{titre}.html', [PostsController::class, 'show'])->name('posts.show');
 
 // Route admin
 Route::group(['prefix' => 'admin'], function () {
