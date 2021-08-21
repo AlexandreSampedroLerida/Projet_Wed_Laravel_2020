@@ -12,8 +12,15 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+// VIEW COMPOSERS
 
+    View::composer('categories._index', function($view){
+        $view->with('categories', App\Models\Category::all());
+    });
 
+    View::composer('tags._index', function($view){
+        $view->with('tags', App\Models\Tag::all());
+    });
 
 // Routes des posts
     use App\Http\Controllers\PostsController;
