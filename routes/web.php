@@ -13,19 +13,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route de base
-Route::get('/', function () {
-    return view('template.index');
-})->name('home');
+
 
 // Routes des posts
     use App\Http\Controllers\PostsController;
+
+    // Route de base (Accueil)
+    Route::get('/', [PostsController::class, 'index'])->name('posts.index');
 
     // Liste des posts
     Route::get('/posts', [PostsController::class, 'index'])->name('posts.index');
 
     // Détail d'un post
-    Route::get('/posts/{post}/{titre}.html', [PostsController::class, 'show'])->name('posts.show');
+    Route::get('/posts/{post}/{slug}.html', [PostsController::class, 'show'])
+        ->where(['post' => '[1-9][0-9]*', 'slug' => '[a-z0-9][a-z0-9\-]*'])
+        ->name('posts.show');
 
 // Route admin
 Route::group(['prefix' => 'admin'], function () {

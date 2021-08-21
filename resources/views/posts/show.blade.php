@@ -1,7 +1,6 @@
 {{--
     Variables disponibles:
-        $post INT
-        $titre STRING
+        $post $posts ARRAY(OBJ(id, title, content, image, category_id, created_at, updated_at))
 --}}
 
 @extends('template.index')
@@ -10,5 +9,11 @@
     <div>
         <a href="{{ route('posts.index') }}">Retour à la liste des posts</a>
     </div>
-    <h2>Détail du post n°{{ $post }}: {{ $titre }}</h2>
+    <h2>{{ $post->title }}</h2>
+    <div>
+        Publication date: {{ $post->created_at }}
+    </div>
+    <div>
+        {{ $post->content }}
+    </div>
 @endsection
