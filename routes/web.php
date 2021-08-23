@@ -29,10 +29,10 @@ use Illuminate\Support\Facades\Route;
     Route::get('/', [PostsController::class, 'index'])->name('posts.index');
 
     // Liste des posts
-    Route::get('/posts', [PostsController::class, 'index'])->name('posts.index');
+    // Route::get('/posts', [PostsController::class, 'index'])->name('posts.index');
 
     // Détail d'un post
-    Route::get('/posts/{post}/{slug}.html', [PostsController::class, 'show'])
+    Route::get('/{post}/{slug}', [PostsController::class, 'show'])
         ->where(['post' => '[1-9][0-9]*', 'slug' => '[a-z0-9][a-z0-9\-]*'])
         ->name('posts.show');
 
