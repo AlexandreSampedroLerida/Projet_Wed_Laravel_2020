@@ -42,6 +42,10 @@ use Illuminate\Support\Facades\Route;
     Route::get('/contact', [ContactsController::class, 'index'])->name('contact.index');
 
 // Route admin
-Route::group(['prefix' => 'admin'], function () {
+    Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+
+// ROUTES AJAX (Older posts)
+
+    Route::get('/ajax/more-posts', [PostsController::class, 'ajaxMore'])->name('posts.ajax.more');

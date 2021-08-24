@@ -30,3 +30,6 @@
     <!-- Jquery Plugins, main Jquery -->
     <script src="{{asset('./assets/js/plugins.js')}}"></script>
     <script src="{{asset('./assets/js/main.js')}}"></script>
+
+    <!-- AJAX more posts -->
+    <script src="{{asset('./assets/js/lastest.js')}}"></script>

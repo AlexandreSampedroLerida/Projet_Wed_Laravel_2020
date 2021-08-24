@@ -25,4 +25,13 @@ class PostsController extends Controller
         //return view('posts.show', ['post' => $post, 'titre' => $titre]);
         return view('posts.show', compact('post'));
     }
+
+    public function ajaxMore(Request $request){
+        $posts = Post::orderBy('created_at', 'DESC')
+            ->take(5)
+            ->offset($request->get('offset'))
+            ->get();
+
+        return view('posts._liste', compact('posts'));
+    }
 }
