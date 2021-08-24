@@ -36,6 +36,11 @@ use Illuminate\Support\Facades\Route;
         ->where(['post' => '[1-9][0-9]*', 'slug' => '[a-z0-9][a-z0-9\-]*'])
         ->name('posts.show');
 
+// Route Contact us
+    use App\Http\Controllers\ContactsController;
+
+    Route::get('/contact', [ContactsController::class, 'index'])->name('contact.index');
+
 // Route admin
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

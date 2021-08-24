@@ -18,7 +18,7 @@
                                 <img class="card-img rounded-0" src=" {{ asset('storage/' . $post->image) }}" alt="Image de l'article">
                                 <a href="#" class="blog_item_date">
                                     <h3>{{ \Carbon\Carbon::parse($post->created_at)->format('d') }}</h3>
-                                    <p>{{ date('m', strtotime($post->created_at))}}</p>
+                                    <p>{{ date('m', strtotime($post->created_at)) }}</p>
                                 </a>
                             </div>
 

@@ -15,7 +15,7 @@
                                 <nav>
                                     <ul id="navigation">
                                         <li><a href="{{ route('posts.index') }}">Blog</a></li>
-                                        <li><a href="contact.html">Contact Us</a></li>
+                                        <li><a href="{{ route('contact.index') }}">Contact Us</a></li>
                                     </ul>
                                 </nav>
                             </div>
